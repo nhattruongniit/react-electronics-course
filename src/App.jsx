@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Route, Routes } from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 import CssBaseline from "@mui/material/CssBaseline";
@@ -10,6 +12,9 @@ import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import AppAppBar from "./components/AppAppBar";
 
 import Product from "./pages/product";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Checkout from "./components/checkout/Checkout";
 
 function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
   return (
@@ -64,8 +69,22 @@ export default function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
-      <Product />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
+              <Product />
+            </>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+
       {/* <Hero /> */}
     </ThemeProvider>
   );

@@ -12,9 +12,11 @@ import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 
+import LogoutIcon from "@mui/icons-material/Logout";
 import WbSunnyRoundedIcon from "@mui/icons-material/WbSunnyRounded";
 import ModeNightRoundedIcon from "@mui/icons-material/ModeNightRounded";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useNavigate } from "react-router-dom";
 
 const logoStyle = {
   width: "30px",
@@ -25,6 +27,7 @@ const logoStyle = {
 };
 
 function AppAppBar({ mode, toggleColorMode }) {
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -113,32 +116,22 @@ function AppAppBar({ mode, toggleColorMode }) {
             >
               <Button
                 color="primary"
-                variant="text"
-                size="small"
-                component="a"
-                href="/material-ui/getting-started/templates/sign-in/"
-                target="_blank"
-              >
-                Sign in
-              </Button>
-              <Button
-                color="primary"
                 variant="contained"
                 size="small"
                 component="a"
-                href="/material-ui/getting-started/templates/sign-up/"
-                target="_blank"
+                href="/login"
               >
-                Sign up
+                Login
               </Button>
-              <Box
-                sx={{ maxWidth: "32px", display: "flex", marginRight: "20px" }}
-              >
+              <Box sx={{ display: "flex" }}>
                 <Button
                   variant="text"
                   size="small"
                   aria-label="button to toggle theme"
                   sx={{ minWidth: "32px", height: "32px", p: "4px" }}
+                  onClick={() => {
+                    navigate("/checkout");
+                  }}
                 >
                   <ShoppingCartIcon fontSize="small" />
                 </Button>
@@ -154,6 +147,14 @@ function AppAppBar({ mode, toggleColorMode }) {
                   ) : (
                     <ModeNightRoundedIcon fontSize="small" />
                   )}
+                </Button>
+                <Button
+                  variant="text"
+                  size="small"
+                  aria-label="button to toggle theme"
+                  sx={{ minWidth: "32px", height: "32px" }}
+                >
+                  <LogoutIcon fontSize="small" />
                 </Button>
               </Box>
             </Box>
@@ -210,11 +211,10 @@ function AppAppBar({ mode, toggleColorMode }) {
                       color="primary"
                       variant="contained"
                       component="a"
-                      href="/material-ui/getting-started/templates/sign-up/"
-                      target="_blank"
+                      href="/login"
                       sx={{ width: "100%" }}
                     >
-                      Sign up
+                      Login
                     </Button>
                   </MenuItem>
                   <MenuItem>
@@ -226,7 +226,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                       target="_blank"
                       sx={{ width: "100%" }}
                     >
-                      Sign in
+                      Logout
                     </Button>
                   </MenuItem>
                 </Box>
