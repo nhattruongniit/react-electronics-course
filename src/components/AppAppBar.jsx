@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
+import MuiIcon from "../assets/images/mui-logo.png";
 
 import LogoutIcon from "@mui/icons-material/Logout";
 import WbSunnyRoundedIcon from "@mui/icons-material/WbSunnyRounded";
@@ -91,11 +92,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 px: 0,
               }}
             >
-              <img
-                src={"public/assets/images/mui-logo.png"}
-                style={logoStyle}
-                alt="logo of mui"
-              />
+              <img src={MuiIcon} style={logoStyle} alt="logo of mui" />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
                   onClick={() => scrollToSection("testimonials")}
