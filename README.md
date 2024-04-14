@@ -8,6 +8,8 @@
   - laptops: https://dummyjson.com/products/category/laptops
   - smartphone: https://dummyjson.com/products/category/smartphones
 
+## Template
+https://mui.com/material-ui/getting-started/templates/
 
 ## Technical:
 - react, react router
