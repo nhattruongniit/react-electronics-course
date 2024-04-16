@@ -25,7 +25,10 @@ https://mui.com/material-ui/getting-started/templates/
 - Checkout
 ## API
 ### Get Product
-https://dummyjson.com/docs/products
+- product list: https://dummyjson.com/docs/products
+- single product: https://dummyjson.com/product/1
+
+### Get category
 - fragrances: https://dummyjson.com/products/category/fragrances
 - laptops: https://dummyjson.com/products/category/laptops
 - smartphone: https://dummyjson.com/products/category/smartphones
